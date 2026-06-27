@@ -5,15 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LAQTA — Video Editor</title>
   
-  <!-- كود المعاينة التلقائي الشامل - جاهز للعمل على أي رابط وفي أي منصة فوراً -->
+  <!-- كود المعاينة التلقائي المحدث لقراءة مسار المجلد الحالي بدقة -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="LAQTA — Professional Video Editor Portfolio" />
   <meta property="og:description" content="متخصص في السرد البصري وصناعة المحتوى عالي الاحتفاظ (High-Retention). تصفح أعمالي في المونتاج للفيديوهات الطويلة ومقاطع الـ Shorts & Reels." />
   
-  <!-- هذا السطر تم ضبطه ليتعرف على رابط موقعك الحالي أو المستقبلي برمجياً بشكل ديناميكي -->
   <script>
-    document.write('<meta property="og:url" content="' + window.location.href + '" />');
-    document.write('<meta property="og:image" content="' + window.location.origin + '/727518618_122100119667366018_2378700179756669130_n.jpg" />');
+    // كود ديناميكي يدمج مسار المجلد الحركي الحالي ويجبر الواتساب على تحديث الكاش فوراً عبر متغير عشوائي
+    var cacheBuster = '?v=' + new Date().getTime();
+    var currentFolder = window.location.origin + window.location.pathname;
+    if(!currentFolder.endsWith('/')) { currentFolder += '/'; }
+    
+    document.write('<meta property="og:url" content="' + window.location.href + cacheBuster + '" />');
+    document.write('<meta property="og:image" content="' + currentFolder + '727518618_122100119667366018_2378700179756669130_n.jpg' + cacheBuster + '" />');
   </script>
   
   <meta property="og:image:width" content="1200" />
